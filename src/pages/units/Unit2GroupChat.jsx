@@ -115,11 +115,15 @@ function Unit2GroupChat() {
             </p>
             <div className="bg-bitna-muted-pink bg-opacity-50 p-3 rounded-lg border border-bitna-strong-pink border-opacity-70">
               <h3 className="font-semibold text-white mb-1">윤솔</h3>
-              <p className="text-bitna-light-pink opacity-90"></p>
+              <p className="text-bitna-light-pink opacity-90">
+                윤솔이는 좋은 친구예요. 우리는 같이 발로란트 이야기하는 것을 좋아해요. 그리고 윤솔이는 항상 저에게 한국어 숙제를 도와줘요.
+              </p>
             </div>
             <div className="bg-bitna-muted-pink bg-opacity-50 p-3 rounded-lg border border-bitna-strong-pink border-opacity-70">
               <h3 className="font-semibold text-white mb-1">성태</h3>
-              <p className="text-bitna-light-pink opacity-90"></p>
+              <p className="text-bitna-light-pink opacity-90">
+                성태는 정말 재미있는 친구예요. 우리는 항상 장난치고 많이 웃어요. 저는 성태랑 포트나이트 게임하는 것도 좋아해요.
+              </p>
             </div>
           </div>
         </div>
