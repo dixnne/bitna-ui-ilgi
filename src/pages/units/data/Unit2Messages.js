@@ -10,7 +10,7 @@ import food from '../../../assets/unit2/food.jpg';
 const chatMessages = [
   {
     senderKey: "diana",
-    text: "안녕~ 제 멕시코 친구들은 몬츠하고 아렐리하고 에스메예요. 그들은 제 대학 친구예요 😊",
+    text: "안녕~ 제 멕시코 친구들은 몬츠하고 아렐리하고 에스메예요. 그들은 제 대학교 친구예요. 우리는 대학교에 깉이 가요. 😊",
     time: "11:00 AM"
   },
   {

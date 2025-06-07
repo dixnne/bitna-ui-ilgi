@@ -122,31 +122,28 @@ function Unit1SelfIntro() {
   const mbtiType = "ENTP"; // ENTP
 
   const introPostComments = [
-    { author: "RM", avatar: btsRmAvatar, text: "빛나 씨, 열정이 보여요! 창의적인 모습 좋아요. 계속 잘하세요~ 화이팅!" },
-    { author: "Jinshi", avatar: jinshiAvatar, text: "음, 흥미로워요. 노력하는 모습이 멋져요. 계속 빛나세요." }
-  ];
+  { author: "RM", avatar: btsRmAvatar, text: "빛나 씨, 좋아요! 열심히 해요! 화이팅!" }, // ¡Me gusta, Bitna! ¡Sigue esforzándote! ¡Ánimo!
+  { author: "Jinshi", avatar: jinshiAvatar, text: "와~ 멋져요. 계속 해요!" } // ¡Guau~! ¡Genial! ¡Sigue así!
+];
 
+const personalityPostComments = [
+  { author: "ENTP friend", text: "ENTP 최고! 같이 놀자!" }, // ¡ENTP es lo mejor! ¡Juguemos juntos!
+  { author: "Astrology Fan", text: "물양, 짱이에요! 좋아요!" } // ¡La oveja de agua es genial! ¡Me gusta!
+];
 
-  const personalityPostComments = [
-    { author: "ENTP friend", text: "ENTP power! Let's debate something fun!" },
-    { author: "Astrology Fan", text: "Water Sheep are so creative! Love it!" }
-  ];
+const universityPostComments = [
+  { author: "Aqua", avatar: aquaOshiNoKoAvatar, text: "빛나 씨, 반짝반짝해요! 멋져요!" }, // ¡Bitna, brillas! ¡Genial!
+  { author: "강철", avatar: kangCheolAvatar, text: "이야기 좋아요. 또 써줘요!" } // Me gusta la historia. ¡Escribe más!
+];
 
+const likesPostComments = [
+  { author: "잭슨", avatar: got7JacksonAvatar, text: "빛나! 좋아요! 멋져요! 🔥" }, // ¡Bitna! ¡Me gusta! ¡Genial!
+  { author: "뱀뱀", avatar: got7BamBamAvatar, text: "누나 최고~! 😎" }, // ¡Hermana mayor es la mejor~!
+  { author: "서율", avatar: seoYulAvatar, text: "기분 좋아요. 계속 웃어요!" }, // Me siento bien. ¡Sigue sonriendo!
+  { author: "리정혁", avatar: riJeongHyeokAvatar, text: "좋아요. 보기 좋아요." }, // Me gusta. Se ve bien.
+  { author: "강태무", avatar: kangTaeMooAvatar, text: "잘했어요! 아주 좋아요!" } // ¡Buen trabajo! ¡Muy bien!
+];
 
-
-  const universityPostComments = [
-    { author: "Aqua", avatar: aquaOshiNoKoAvatar, text: "이 프로필, 정말 멋져요. 스타 느낌 나요. 빛을 잃지 마세요!" },
-    { author: "강철", avatar: kangCheolAvatar, text: "이야기가 잘 쓰였어요, 빛나 씨. 다음 이야기도 기대할게요!" }
-  ];
-
-  
-  const likesPostComments = [
-    { author: "잭슨", avatar: got7JacksonAvatar, text: "Yo, Bitna! 프로필 너무 좋아요! 🔥 계속 멋지게 해요!" },
-    { author: "뱀뱀", avatar: got7BamBamAvatar, text: "에이~ 빛나 누나! 취향 최고예요! 스끄엣~ 😉" },
-    { author: "서율", avatar: seoYulAvatar, text: "빛나 님, 글에서 좋은 기분이 느껴져요. 그 기분 계속 지켜요." },
-    { author: "리정혁", avatar: riJeongHyeokAvatar, text: "빛나 동무, 프로필 잘 만들었소. 보기 좋소. 계속 그렇게 하시오." },
-    { author: "강태무", avatar: kangTaeMooAvatar, text: "잘 했어요. 프로필이 아주 좋아요. 열심히 하는 모습 보기 좋아요." }
-  ];
 
 
 
@@ -217,7 +214,7 @@ function Unit1SelfIntro() {
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/CCDF92/333?text=Yo+de+nuevo"; }}
             />
             <p className="mt-3 text-center text-gray-700">
-              사진에 보이는 사람이 저, <span className="font-bold text-bitna-strong-pink">{koreanName}</span>예요! ✨ 만나서 반가워요!
+              사진 사람이 저예요. <span className="font-bold text-bitna-strong-pink">{koreanName}</span>예요! ✨ 만나서 반가워요!
             </p> {/* "This person is me, Bitna! Nice to meet you!" */}
             <p className="mt-3 text-center text-gray-700">
               오늘 제 한국어 일기를 시작 해요.
@@ -320,7 +317,7 @@ function Unit1SelfIntro() {
               <div className="p-3 bg-orange-100 rounded-lg shadow">
                 <h4 className="font-semibold text-orange-700 mb-1 flex items-center"><FaFilm className="mr-2 text-orange-500"/> K-드라마 🎬</h4>
                 <p className="text-gray-700 text-sm">
-                  한국 드라마 보는 것을 정말 좋아해요! 최근에 본 드라마는 "알함브라 궁전의 추억"이에요.
+                  한국 드라마는 정말 좋아해요! 최근에 본 드라마는 "알함브라 궁전의 추억"이에요.
                 </p> {/* "I really love watching Korean dramas! The last drama I watched was 'Memories of the Alhambra'." */}
               </div>
               
