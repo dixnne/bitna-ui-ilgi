@@ -34,7 +34,7 @@ const NumberedMarker = ({ number, isTarget, onClick, position, zIndex }) => {
 const initialDeskObjectsData = [
   { id: 'bag', name: '가방', sentence: '가방은 정말 귀여워요. 나폴리 아이스크림 맛이에요.', position: 'top-[90%] left-[65%]', zIndex: 5, closeupImage: bag },
   { id: 'laptop', name: '노트북', sentence: '노트북에는 스티커가 많이 있어요.', position: 'top-[83%] left-[24%]', zIndex: 10, closeupImage: laptop },
-  { id: 'americano', name: '아이스 아메리카노가', sentence: '아이스 아메리카노가 제가 가장 좋아해요.', position: 'top-[82%] left-[38.5%]', zIndex: 15, closeupImage: americano },
+  { id: 'americano', name: '아이스 아메리카노가', sentence: '아이스 아메리카노는 제가 가장 좋아해요.', position: 'top-[82%] left-[38.5%]', zIndex: 15, closeupImage: americano },
   { id: 'bambam', name: '뱀뱀', sentence: '뱀뱀은 정말 잘생겼어요!', position: 'top-[63%] left-[33%]', zIndex: 10, closeupImage: bambam },
   { id: 'bts', name: '방탄소년단은', sentence: '방탄소년단 음악을 좋아해요.', position: 'top-[65%] left-[21%]', zIndex: 15, closeupImage: bts },
   { id: 'highlighters', name: '스탠드', sentence: '형광펜 색상이 귀여워요.', position: 'top-[15%] right-[67%]', zIndex: 10, closeupImage: highlighters },
