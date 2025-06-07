@@ -38,9 +38,6 @@ function Navbar() {
               <a href="https://instagram.com/dianapa.narvaez/" target="_blank" rel="noopener noreferrer" className="text-bitna-light-pink hover:text-white transition-colors">
                 <FaInstagram size={22} />
               </a>
-              <a href="https://x.com/dixnnesita" target="_blank" rel="noopener noreferrer" className="text-bitna-light-pink hover:text-white transition-colors">
-                <FaTwitter size={22} />
-              </a>
               <a href="https://github.com/dixnne/bitna-ui-ilgi" target="_blank" rel="noopener noreferrer" className="text-bitna-light-pink hover:text-white transition-colors"> {/* Cambia # por tu URL */}
                 <FaGlobeAmericas size={22} />
               </a>
@@ -103,9 +100,6 @@ function Navbar() {
             <div className="flex items-center justify-center space-x-6 px-5">
               <a href="https://www.instagram.com/dianapa.narvaez/" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors">
                 <FaInstagram size={24} />
-              </a>
-              <a href="https://x.com/dixnnesita" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors">
-                <FaTwitter size={24} />
               </a>
               <a href="https://github.com/dixnne/bitna-ui-ilgi" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors"> {/* Cambia # por tu URL */}
                 <FaGlobeAmericas size={24} />
