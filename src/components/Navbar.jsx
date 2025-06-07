@@ -35,13 +35,13 @@ function Navbar() {
 
             {/* Derecha (Barra Superior): Iconos de Redes Sociales (Visible en pantallas grandes) */}
             <div className="hidden md:flex items-center space-x-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-bitna-light-pink hover:text-white transition-colors">
+              <a href="https://instagram.com/dianapa.narvaez/" target="_blank" rel="noopener noreferrer" className="text-bitna-light-pink hover:text-white transition-colors">
                 <FaInstagram size={22} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-bitna-light-pink hover:text-white transition-colors">
+              <a href="https://x.com/dixnnesita" target="_blank" rel="noopener noreferrer" className="text-bitna-light-pink hover:text-white transition-colors">
                 <FaTwitter size={22} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-bitna-light-pink hover:text-white transition-colors"> {/* Cambia # por tu URL */}
+              <a href="https://github.com/dixnne/bitna-ui-ilgi" target="_blank" rel="noopener noreferrer" className="text-bitna-light-pink hover:text-white transition-colors"> {/* Cambia # por tu URL */}
                 <FaGlobeAmericas size={22} />
               </a>
             </div>
@@ -77,8 +77,8 @@ function Navbar() {
             <NavLink to="/index" className={({ isActive }) => `${navLinkClass} ${isActive ? activeNavLinkClass : inactiveNavLinkClass}`}>
               빛나의 별자리 지도
             </NavLink>
-            <NavLink to="/conclusiones" className={({ isActive }) => `${navLinkClass} ${isActive ? activeNavLinkClass : inactiveNavLinkClass}`}>
-              Conclusiones
+            <NavLink to="/conclusion" className={({ isActive }) => `${navLinkClass} ${isActive ? activeNavLinkClass : inactiveNavLinkClass}`}>
+              결론
             </NavLink>
           </div>
         </div>
@@ -107,7 +107,7 @@ function Navbar() {
               <a href="https://x.com/dixnnesita" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors">
                 <FaTwitter size={24} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors"> {/* Cambia # por tu URL */}
+              <a href="https://github.com/dixnne/bitna-ui-ilgi" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors"> {/* Cambia # por tu URL */}
                 <FaGlobeAmericas size={24} />
               </a>
             </div>
