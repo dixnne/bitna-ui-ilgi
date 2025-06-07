@@ -1,0 +1,19 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  # Nombre de nuestro servicio
+  bitna-diary-app:
+    # Construye la imagen usando el Dockerfile en el directorio actual (.)
+    build: .
+    # Asigna un nombre al contenedor para identificarlo fácilmente
+    container_name: bitna_diary
+    # Mapea el puerto 8080 de tu máquina local al puerto 80 del contenedor
+    # Puedes acceder a la app en http://localhost:8080
+    # Puedes cambiar el 8080 por otro puerto si está ocupado (ej. 3000:80)
+    ports:
+      - "8080:80"
+    # Política de reinicio: el contenedor se reiniciará automáticamente
+    # a menos que lo detengas explícitamente.
+    restart: unless-stopped
