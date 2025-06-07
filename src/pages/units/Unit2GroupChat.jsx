@@ -11,14 +11,16 @@ import younsolPfp from '../../assets/unit2/younsol.jpg';
 import sungtaePfp from '../../assets/unit2/sungtae.jpg';
 import arelyPfp from '../../assets/unit2/arely.jpg';
 import dianaPfp from '../../assets/unit2/diana.jpg';
+import esmePfp from '../../assets/unit2/esme.jpg';
 
 // Participant Data
 const participants = {
-  diana: { name: "빛나", avatar: dianaPfp, isCurrentUser: true, status: "오늘 날씨 최고! ☀️" },
-  yoonsol: { name: "윤솔", avatar: younsolPfp, isCurrentUser: false, status: "서울숲에서 산책 중 🌳" },
-  seongtae: { name: "성태", avatar: sungtaePfp, isCurrentUser: false, status: "발로란트 한 판? 😉" },
-  arely: { name: "아렐리", avatar: arelyPfp, isCurrentUser: false, status: "Learning Korean! 화이팅!" },
-  monts: { name: "먼츠", avatar: montsPfp, isCurrentUser: false, status: "Ready for K-Drama marathon!" },
+  diana: { name: "빛나", avatar: dianaPfp, isCurrentUser: true },
+  yoonsol: { name: "윤솔", avatar: younsolPfp, isCurrentUser: false },
+  seongtae: { name: "성태", avatar: sungtaePfp, isCurrentUser: false},
+  arely: { name: "아렐리", avatar: arelyPfp, isCurrentUser: false },
+  monts: { name: "먼츠", avatar: montsPfp, isCurrentUser: false },
+  esme: { name: "에스메", avatar: esmePfp, isCurrentUser: false},
 };
 
 // Image Lightbox Component - Reverted to previous, smaller size
@@ -106,23 +108,23 @@ function Unit2GroupChat() {
         <div className="w-full max-w-xl lg:max-w-xs xl:max-w-sm bg-bitna-muted-pink bg-opacity-80 p-6 rounded-xl shadow-xl border-2 border-bitna-strong-pink transform lg:rotate-2 order-first lg:order-none mb-6 lg:mb-0 transition-all duration-300 ease-in-out lg:hover:scale-105 lg:hover:shadow-2xl lg:hover:rotate-0">
           <h2 className="font-single-day text-3xl text-white text-center mb-4 flex items-center justify-center">
             <FaUsers className="mr-3 text-bitna-light-pink opacity-90" />
-            나의 멋진 한국 친구들! 
+            나의 한국 친구들
           </h2> 
           <div className="space-y-3 text-md text-white opacity-95">
             <p className="mb-2">
-              안녕하세요! 저는 두 명의 한국 친구가 있어요. 이름은 윤솔이랑 성태예요. 얘들은 항상 제 한국어 공부를 도와줘요.
-              오늘 빛나의 일기에서 저는 얘들을 소개하고 싶어요!
+              안녕하세요! 저는 두 명의 한국 친구가 있어요. 이름은 윤솔하고 성태예요. 얘들은 항상 제 한국어 공부를 도와줘요.
+              오늘 빛나의 일기에서 저는 얘들을 소개해요!
             </p>
             <div className="bg-bitna-muted-pink bg-opacity-50 p-3 rounded-lg border border-bitna-strong-pink border-opacity-70">
               <h3 className="font-semibold text-white mb-1">윤솔</h3>
               <p className="text-bitna-light-pink opacity-90">
-                윤솔이는 좋은 친구예요. 우리는 같이 발로란트 이야기하는 것을 좋아해요. 그리고 윤솔이는 항상 저에게 한국어 숙제를 도와줘요.
+                윤솔은 진짜 멋있어요. 우리는 발로란트를 같이 이야기해요. 그리고 윤솔은 항상 제 한국어 숙제를 도와줘요.
               </p>
             </div>
             <div className="bg-bitna-muted-pink bg-opacity-50 p-3 rounded-lg border border-bitna-strong-pink border-opacity-70">
               <h3 className="font-semibold text-white mb-1">성태</h3>
               <p className="text-bitna-light-pink opacity-90">
-                성태는 정말 재미있는 친구예요. 우리는 항상 장난치고 많이 웃어요. 저는 성태랑 포트나이트 게임하는 것도 좋아해요.
+                성태는 정말 재미있어요. 우리는 항상 많이 웃어요. 저는 얘 하고 포트나이트를 해요.
               </p>
             </div>
           </div>
@@ -142,7 +144,7 @@ function Unit2GroupChat() {
           {/* Main Chat Content (Sidebar + Chat Area) */}
           <div className="flex flex-1 overflow-hidden">
             {/* Left Sidebar (Friends/Chats List - Visible on md and up) */}
-            <div className="hidden md:flex flex-col w-24 lg:w-28 bg-bitna-lime-green bg-opacity-80 border-r border-green-500">
+            <div className="hidden md:flex flex-col w-20 bg-bitna-lime-green bg-opacity-80 border-r border-green-500">
               <div className="p-2 space-y-3 mt-2">
                 <button className="p-2 text-green-800 hover:bg-green-200 rounded-md w-full"><BsPeopleFill size={24} className="mx-auto"/></button>
                 <button className="p-2 text-green-800 bg-green-100 bg-opacity-70 ring-2 ring-green-600 rounded-md w-full"><BsFillChatFill size={24} className="mx-auto"/></button>
@@ -154,7 +156,6 @@ function Unit2GroupChat() {
                   <div key={p.name} className={`p-2 rounded-md hover:bg-green-200 hover:bg-opacity-50 cursor-pointer ${p.name === "빛나" ? "bg-green-200 bg-opacity-50" : ""}`}>
                     <img src={p.avatar} alt={p.name} className="w-10 h-10 rounded-lg border border-green-600 mx-auto"/>
                     <p className="text-xs text-green-900 truncate text-center mt-1">{p.name.split(" ")[0]}</p>
-                    <p className="text-[10px] text-green-700 truncate text-center px-1">{p.status}</p>
                   </div>
                 ))}
                 <div className="p-2 text-center text-xs text-green-800">친구 {Object.keys(participants).length}명</div>

@@ -95,7 +95,7 @@ function Cover() {
 
           <div className="text-center mt-auto">
             <Link
-              to="/indice"
+              to="/index"
               className="inline-block bg-bitna-strong-pink text-white font-single-day text-3xl py-3 px-8 rounded-full shadow-xl hover:bg-bitna-muted-pink hover:scale-105 transform transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-bitna-lime-green focus:ring-opacity-50 active:scale-95"
             >
               시작!

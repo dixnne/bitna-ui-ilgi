@@ -94,17 +94,17 @@ function Navbar() {
             <NavLink to="/index" className={({ isActive }) => `block ${navLinkClass} ${isActive ? activeNavLinkClass : inactiveNavLinkClass}`} onClick={() => setIsMobileMenuOpen(false)}>
               빛나의 별자리 지도
             </NavLink>
-            <NavLink to="/conclusiones" className={({ isActive }) => `block ${navLinkClass} ${isActive ? activeNavLinkClass : inactiveNavLinkClass}`} onClick={() => setIsMobileMenuOpen(false)}>
-              Conclusiones
+            <NavLink to="/conclusion" className={({ isActive }) => `block ${navLinkClass} ${isActive ? activeNavLinkClass : inactiveNavLinkClass}`} onClick={() => setIsMobileMenuOpen(false)}>
+              결론
             </NavLink>
           </div>
           {/* Iconos de Redes Sociales en Menú Móvil */}
           <div className="pt-4 pb-3 border-t border-bitna-muted-pink">
             <div className="flex items-center justify-center space-x-6 px-5">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors">
+              <a href="https://www.instagram.com/dianapa.narvaez/" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors">
                 <FaInstagram size={24} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors">
+              <a href="https://x.com/dixnnesita" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors">
                 <FaTwitter size={24} />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-bitna-strong-pink hover:text-bitna-muted-pink transition-colors"> {/* Cambia # por tu URL */}

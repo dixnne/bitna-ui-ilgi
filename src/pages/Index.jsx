@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import { IoSparklesSharp } from 'react-icons/io5'; 
-import { RiMapPinLine } from 'react-icons/ri';
+import { BsSuitHeartFill } from "react-icons/bs";
 
 // Unit data with FaStar for all units. 
 // 'pos' object updated for Leo constellation layout.
@@ -20,10 +20,10 @@ const diaryUnits = [
   // Body and Tail part of Leo (positions unchanged)
   { id: 6, koreanTitle: "어제 일과", englishTitle: "Yesterday's Routine", path: "/unit6", Icon: FaStar, starSize: "text-4xl md:text-5xl", color: "text-white", tooltipBg: "bg-gray-800", pos: { y: 55, x: 10 } }, // Beta Leonis (β - Denebola) - Tail, far left
   { id: 7, koreanTitle: "날씨", englishTitle: "Weather", path: "/unit7", Icon: FaStar, starSize: "text-5xl md:text-6xl", color: "text-bitna-light-pink", tooltipBg: "bg-gray-800", pos: { y: 20, x: 33 } }, // Delta Leonis (δ - Zosma) equivalent - Top-left of body triangle
-  { id: 8, koreanTitle: "시간", englishTitle: "Time", path: "/unit8", Icon: FaStar, starSize: "text-4xl md:text-5xl", color: "text-bitna-lime-green", tooltipBg: "bg-gray-800", pos: { y: 52, x: 32 } }, // Theta Leonis (θ - Chertan) equivalent - Mid-body
+  { id: 8, koreanTitle: "시간", englishTitle: "Time", path: "", Icon: FaStar, starSize: "text-4xl md:text-5xl", color: "text-bitna-lime-green", tooltipBg: "bg-gray-800", pos: { y: 52, x: 32 } }, // Theta Leonis (θ - Chertan) equivalent - Mid-body
 
   // Main star of Leo - Anchor of the sickle (position unchanged)
-  { id: 9, koreanTitle: "결론", englishTitle: "Conclusion", path: "/conclusions", Icon: FaStar, starSize: "text-6xl md:text-7xl", color: "text-bitna-light-pink", tooltipBg: "bg-gray-800", pos: { y: 68, x: 79 } }, // Alpha Leonis (α - Regulus) - Bottom-right of sickle
+  { id: 9, koreanTitle: "결론", englishTitle: "Conclusion", path: "/conclusion", Icon: FaStar, starSize: "text-6xl md:text-7xl", color: "text-bitna-light-pink", tooltipBg: "bg-gray-800", pos: { y: 68, x: 79 } }, // Alpha Leonis (α - Regulus) - Bottom-right of sickle
 ];
 
 // Define connections for Leo constellation (connections remain the same)
@@ -54,8 +54,9 @@ function Index() {
       {/* Page Title */}
       <div className="text-center mb-8 md:mb-10 z-10">
         <h1 className="text-5xl md:text-7xl text-bitna-light-pink mb-2 flex items-center justify-center font-single-day">
-          <RiMapPinLine className="mr-3 text-bitna-lime-green" />
+          <BsSuitHeartFill className="mr-3 text-bitna-lime-green" />
           빛나의 별자리 지도
+          <BsSuitHeartFill className="ml-3 text-bitna-lime-green" />
         </h1>
       </div>
 
@@ -122,7 +123,7 @@ function Index() {
         <IoSparklesSharp
           key={`bg-star-${i}`}
           className="absolute text-bitna-light-pink opacity-30 animate-twinkle" 
-          size={Math.random() * 8 + 3} 
+          size={Math.random() * 28 + 3} 
           style={{
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,

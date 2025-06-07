@@ -3,79 +3,86 @@ import React, { useState, useEffect } from 'react';
 import { FaShoppingCart, FaTimes, FaRegHeart, FaHeart, FaCartPlus, FaPlus, FaMinus, FaTrashAlt, FaGift } from 'react-icons/fa';
 import { IoSparkles } from 'react-icons/io5';
 
+import pocky from '../../assets/unit4/pocky.jpg';
+import buldak from '../../assets/unit4/buldak.jpg';
+import oreo from '../../assets/unit4/oreo.jpg';
+import yoppoki from '../../assets/unit4/yoppoki.jpg';
+import yoppokiramyeon from '../../assets/unit4/yoppokiramyeon.jpg';
+import mochi from '../../assets/unit4/mochi.jpg';
+
 // --- IMPORTA TUS IMÁGENES DE PRODUCTOS AQUÍ ---
 const initialProductsData = [
   {
     id: 1,
-    name: "빼빼로",
-    koreanName: "빼빼로 (Pepero)",
+    name: "포키",
+    koreanName: "포키",
     priceKorean: "천오백 원", 
     priceNumeric: 1500,
-    image: "https://placehold.co/150x150/FFD1DC/333?text=Pepero", // Imagen más cuadrada para layout horizontal
-    description: "초콜릿 맛이 나는 맛있는 막대 과자예요.", 
-    narrative: "영화 볼 때 빼빼로는 필수죠! 가게에서 '빼빼로 한 갑 주세요!'라고 말할 거예요. 이 빼빼로를 주세요!",
-    category: "과자 (Snacks)",
-    store: "빛나 마트 (Bitna Mart)"
+    image: pocky, // Imagen más cuadrada para layout horizontal
+    description: "초콜릿 막대과자예요.", 
+    narrative: "맛있어요! 이 포키를 주세요.",
+    category: "과자",
+    store: "빛나 마트"
   },
   {
     id: 2,
-    name: "Banana Milk",
-    koreanName: "바나나 우유 (Banana Uyu)",
+    name: "오레오",
+    koreanName: "오레오",
     priceKorean: "천이백 원", 
     priceNumeric: 1200,
-    image: "https://placehold.co/150x150/FFFACD/333?text=Banana+Milk", 
-    description: "달콤하고 부드러운 바나나 맛 우유예요.", 
-    narrative: "목이 마를 땐 역시 바나나 우유! '바나나 우유 하나 주세요.' 하면 딱 좋아요. 이 바나나 우유를 주세요.",
-    category: "음료 (Drinks)",
-    store: "빛나 마트 (Bitna Mart)"
+    image: oreo, 
+    description: "초콜릿 쿠키.", 
+    narrative: "저는 초콜릿을 좋아해요. 오레오 세 봉지 주세요",
+    category: "과자",
+    store: "빛나 마트"
   },
   {
     id: 3,
-    name: "Shrimp Crackers",
-    koreanName: "새우깡 (Saeukkang)",
+    name: "치즈 불닭",
+    koreanName: "치즈 불닭",
     priceKorean: "천 원", 
     priceNumeric: 1000,
-    image: "https://placehold.co/150x150/FFB347/333?text=Saeukkang", 
-    description: "짭짤하고 바삭바삭한 새우 맛 과자예요.", 
-    narrative: "영화 보면서 먹으면 시간 가는 줄 몰라요! '새우깡 한 봉지 주세요!' 해야겠어요. 이 새우깡을 주세요.",
-    category: "과자 (Snacks)",
-    store: "빛나 마트 (Bitna Mart)"
+    image: buldak, 
+    description: "치즈 맛 라면.", 
+    narrative: "오, 좋아요. 불닭 하나 주세요.",
+    category: "과자",
+    store: "빛나 마트"
   },
   {
     id: 4,
-    name: "K-Movie DVD",
-    koreanName: "한국 영화 DVD",
+    name: "요뽀끼",
+    koreanName: "요뽀끼",
     priceKorean: "만 오천 원", 
     priceNumeric: 15000,
-    image: "https://placehold.co/150x150/A0C4FF/333?text=K-Movie+DVD", 
-    description: "오늘 밤 볼 재미있는 한국 영화 DVD예요.", 
-    narrative: "이 영화 정말 보고 싶었어요! '이 영화 DVD를 주세요.'라고 말해서 꼭 살 거예요. 이 DVD를 주세요.",
-    category: "엔터테인먼트 (Entertainment)",
-    store: "빛나 미디어 (Bitna Media)"
+    image: yoppoki, 
+    description: "치즈 떡볶이.", 
+    narrative: "저는 떡볶이를 절대 안 먹어요. 요뽀끼 한 컵 주세요.",
+    category: "과자",
+    store: "빛나 마트"
   },
   {
     id: 5,
-    name: "Cozy Blanket",
-    koreanName: "담요 (Damyo)",
+    name: "말차 모찌",
+    koreanName: "말차 모찌",
     priceKorean: "이만 원", 
     priceNumeric: 20000,
-    image: "https://placehold.co/150x150/E6E6FA/333?text=Blanket", 
-    description: "영화를 볼 때 따뜻하게 덮을 담요예요.", 
-    narrative: "밤에는 조금 쌀쌀할 수 있으니까... '이 예쁜 담요를 주세요!' 해서 따뜻한 영화의 밤을 보낼 거예요. 이 담요를 주세요.",
-    category: "홈 (Home)",
-    store: "빛나 홈 (Bitna Home)"
+    image: mochi, 
+    description: "말차 모찌 하고 화이트 초콜릿 필링.", 
+    narrative: "모찌 정말 귀여워요. 모찌 한 팩 주세요",
+    category: "과자",
+    store: "빛나 마트"
   },
   {
     id: 6,
-    name: "Popcorn",
-    koreanName: "팝콘 (Papkon)",
+    name: "라뽀끼",
+    koreanName: "라뽀끼",
     priceKorean: "오천 원", 
     priceNumeric: 5000,
-    image: "https://placehold.co/150x150/FFFDD0/333?text=Popcorn", 
-    description: "영화관 필수템! 고소한 팝콘이에요.", 
-    narrative: "영화에 팝콘이 빠질 수 없죠! '팝콘 큰 거 하나 주세요!' 외칠 거예요! 이 팝콘을 주세요.",
-    category: "과자 (Snacks)",
-    store: "빛나 마트 (Bitna Mart)"
+    image: yoppokiramyeon, 
+    description: "치즈 컵 라뽀끼 (라면 + 떡볶이).", 
+    narrative: "정말 미친 조합이에요. 라뽀끼 한 컵 주세요..",
+    category: "과자",
+    store: "빛나 마트"
   },
 ];
 
@@ -170,7 +177,7 @@ const ProductDetailModal = ({ product, onClose, onAddToCart }) => {
           </div>
         </div>
         <div className="mt-6 bg-white bg-opacity-70 p-4 rounded-lg shadow-inner border border-bitna-muted-pink">
-          <h4 className="font-single-day text-xl text-bitna-strong-pink mb-2 flex items-center"><IoSparkles className="mr-2 text-yellow-400"/> 빛나의 생각 (Bitna's Thought):</h4>
+          <h4 className="font-single-day text-xl text-bitna-strong-pink mb-2 flex items-center"><IoSparkles className="mr-2 text-yellow-400"/> 빛나의 생각:</h4>
           <p className="text-gray-700 italic text-sm leading-relaxed">"{product.narrative}"</p>
         </div>
         <div className="mt-6 flex justify-center md:justify-end space-x-3">
@@ -200,25 +207,25 @@ const CartSummary = ({ cartItems, products, selectedItemCount }) => {
       </h2>
       <div className="space-y-3 text-sm mb-6">
         <div className="flex justify-between text-gray-700">
-          <span>상품 합계:</span>
+          <span>합계:</span>
           <span className="font-semibold">{subtotal.toLocaleString()}원</span>
         </div>
         <div className="flex justify-between text-gray-700">
-          <span>배송비:</span>
-          <span className="font-semibold">{shippingEst > 0 ? `${shippingEst.toLocaleString()}원` : "무료! (Free!)"}</span>
+          <span>배송:</span>
+          <span className="font-semibold">{shippingEst > 0 ? `${shippingEst.toLocaleString()}원` : "무료!"}</span>
         </div>
         {subtotal > 0 && subtotal < 30000 && (
-            <p className="text-xs text-green-600 text-center">✨ {(30000 - subtotal).toLocaleString()}원 더 추가하면 무료 배송! ✨</p>
+            <p className="text-xs text-green-600 text-center">✨ {(30000 - subtotal).toLocaleString()}원 추가, 무료 배송! ✨</p>
         )}
         <div className="border-t-2 border-dashed border-bitna-muted-pink pt-3 mt-3 flex justify-between text-bitna-strong-pink font-bold text-lg">
-          <span>총 주문 금액:</span>
+          <span>총:</span>
           <span>{total.toLocaleString()}원</span>
         </div>
       </div>
       <button className="w-full bg-bitna-strong-pink text-white font-single-day text-2xl py-3.5 rounded-lg shadow-lg hover:bg-opacity-80 transition-all duration-200 active:scale-95">
         결제하기 ({selectedItemCount}) {/* Muestra items seleccionados */}
       </button>
-      <p className="text-xs text-bitna-muted-pink mt-4 text-center">
+      <p className="text-lg text-bitna-muted-pink mt-4 text-center">
         ✨ 즐거운 영화의 밤 되세요! ✨
       </p>
     </div>
@@ -312,16 +319,16 @@ function Unit4MovieNightPrep() {
 
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-pink-100 via-purple-100 to-bitna-light-pink py-8 px-4 pt-16 md:pt-20">
+    <div className="min-h-screen w-full bg-gradient-to-br from-pink-100 via-purple-100 to-bitna-light-pink py-8 px-4 pt-10 md:pt-10">
       <div className="container mx-auto">
         <header className="text-center mb-10 md:mb-12 relative">
           <h1 className="font-single-day text-4xl md:text-6xl text-bitna-strong-pink mb-2 flex items-center justify-center">
             <IoSparkles className="text-yellow-400 text-3xl md:text-4xl mr-2 animate-pulse" />
-            빛나의 영화의 밤 마트!
+            빛나의 영화 밤 마트!
             <IoSparkles className="text-yellow-400 text-3xl md:text-4xl ml-2 animate-pulse" />
           </h1>
           <p className="text-lg md:text-xl text-bitna-muted-pink mb-4">
-            오늘 밤 최고의 영화를 위해 맛있는 간식과 필요한 물건들을 골라봐요! 🍿🎬
+            오늘 빛나의 일기에서 우리는 간식 선택해요. 영화 밤을 해요! 🍿🎬
           </p>
           <div className="absolute top-0 right-0 -mt-4 md:-mt-2">
             <button className="relative text-bitna-strong-pink hover:text-bitna-muted-pink p-2">

@@ -3,7 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { FaTimes, FaStickyNote } from 'react-icons/fa';
 import { IoSparkles } from 'react-icons/io5';
 
-import desk from '../../assets/unit3/desk.jpeg';
+import desk from '../../assets/unit3/desk.jpg';
+import bag from '../../assets/unit3/bag.jpg';
+import americano from '../../assets/unit3/americano.jpg';
+import bambam from '../../assets/unit3/bambam.jpg';
+import bts from '../../assets/unit3/bts.jpg';
+import highlighters from '../../assets/unit3/highlighters.jpg';
+import laptop from '../../assets/unit3/laptop.jpg';
+import pens from '../../assets/unit3/pens.jpg';
+import turtle from '../../assets/unit3/turtle.jpg';
 
 // Component for the numbered, semi-transparent markers
 const NumberedMarker = ({ number, isTarget, onClick, position, zIndex }) => {
@@ -24,25 +32,25 @@ const NumberedMarker = ({ number, isTarget, onClick, position, zIndex }) => {
 };
 
 const initialDeskObjectsData = [
-  { id: 'chair', name: '의자', sentence: '이것은 제 의자예요. 아주 편해요.', position: 'top-[75%] left-[50%]', zIndex: 5, closeupImage: 'https://placehold.co/200x150/E9D5FF/4A5568?text=Silla+Zoom' },
-  { id: 'laptop', name: '노트북', sentence: '노트북이 책상 위에 있어요. 이걸로 공부해요.', position: 'top-[40%] left-[50%]', zIndex: 10, closeupImage: 'https://placehold.co/200x150/C6F6D5/2F855A?text=Laptop+Zoom' },
-  { id: 'mug', name: '컵', sentence: '컵 안에 따뜻한 차가 있어요.', position: 'top-[45%] left-[70%]', zIndex: 15, closeupImage: 'https://placehold.co/200x150/FFC0CB/800080?text=Taza+Zoom' },
-  { id: 'books', name: '책들', sentence: '한국어 책들이에요. 재미있어요!', position: 'top-[50%] left-[25%]', zIndex: 10, closeupImage: 'https://placehold.co/200x150/A7E6FF/0077CC?text=Libros+Zoom' },
-  { id: 'pencils', name: '연필꽂이', sentence: '펜들이 연필꽂이 안에 있어요.', position: 'top-[35%] left-[30%]', zIndex: 15, closeupImage: 'https://placehold.co/200x150/FEEBC8/975A16?text=Lapices+Zoom' },
-  { id: 'lamp', name: '스탠드', sentence: '밤에는 스탠드를 켜요.', position: 'top-[20%] right-[20%]', zIndex: 10, closeupImage: 'https://placehold.co/200x150/F9E79F/B7791F?text=Lampara+Zoom' },
-  { id: 'plant', name: '화분', sentence: '작은 화분이에요. 귀여워요!', position: 'top-[60%] left-[15%]', zIndex: 10, closeupImage: 'https://placehold.co/200x150/9AE6B4/276749?text=Planta+Zoom' },
-  { id: 'phone', name: '핸드폰', sentence: '제 핸드폰이에요. 항상 필요해요.', position: 'top-[65%] right-[25%]', zIndex: 15, closeupImage: 'https://placehold.co/200x150/CBD5E0/4A5568?text=Celular+Zoom' },
+  { id: 'bag', name: '가방', sentence: '가방은 정말 귀여워요. 나폴리 아이스크림 맛이에요.', position: 'top-[90%] left-[65%]', zIndex: 5, closeupImage: bag },
+  { id: 'laptop', name: '노트북', sentence: '노트북에는 스티커가 많이 있어요.', position: 'top-[83%] left-[24%]', zIndex: 10, closeupImage: laptop },
+  { id: 'americano', name: '아이스 아메리카노가', sentence: '아이스 아메리카노가 제가 가장 좋아해요.', position: 'top-[82%] left-[38.5%]', zIndex: 15, closeupImage: americano },
+  { id: 'bambam', name: '뱀뱀', sentence: '뱀뱀은 정말 잘생겼어요!', position: 'top-[63%] left-[33%]', zIndex: 10, closeupImage: bambam },
+  { id: 'bts', name: '방탄소년단은', sentence: '방탄소년단 음악을 좋아해요.', position: 'top-[65%] left-[21%]', zIndex: 15, closeupImage: bts },
+  { id: 'highlighters', name: '스탠드', sentence: '형광펜 색상이 귀여워요.', position: 'top-[15%] right-[67%]', zIndex: 10, closeupImage: highlighters },
+  { id: 'pens', name: '화분', sentence: '이 펜들을 많이 사용해요!', position: 'top-[75%] left-[20%]', zIndex: 10, closeupImage: pens },
+  { id: 'turtle', name: '핸드폰', sentence: '이 라면 거북이를 만들었어요.', position: 'top-[50%] right-[10%]', zIndex: 15, closeupImage: turtle },
 ];
 
 const narrativeStepsData = [
-  { stepNumber: 1, targetObjectId: 'chair', narrativeText: '제 책상에 오신 것을 환영해요! 먼저, 의자에 앉아 볼까요? (1번 표시를 클릭!)' },
-  { stepNumber: 2, targetObjectId: 'laptop', narrativeText: '좋아요! 이제 노트북을 켤 시간이에요. (2번 표시를 클릭!)' },
-  { stepNumber: 3, targetObjectId: 'books', narrativeText: '한국어 공부를 해야 해요! 책을 찾아보세요. (3번 표시를 클릭!)' },
-  { stepNumber: 4, targetObjectId: 'pencils', narrativeText: '필기도구가 필요해요. 연필꽂이를 클릭하세요! (4번 표시를 클릭!)' },
-  { stepNumber: 5, targetObjectId: 'mug', narrativeText: '목이 말라요. 컵에 뭐가 있을까요? (5번 표시를 클릭!)' },
-  { stepNumber: 6, targetObjectId: 'lamp', narrativeText: '조금 어두워요. 스탠드를 켤까요? (6번 표시를 클릭!)' },
-  { stepNumber: 7, targetObjectId: 'plant', narrativeText: '제 작은 화분도 한번 보세요! (7번 표시를 클릭!)' },
-  { stepNumber: 8, targetObjectId: 'phone', narrativeText: '마지막으로 핸드폰을 확인해 볼까요? (8번 표시를 클릭!)' },
+  { stepNumber: 1, targetObjectId: 'bag', narrativeText: '제 가방이 의자 위에 있어요 (1번)' },
+  { stepNumber: 2, targetObjectId: 'laptop', narrativeText: '제 노트북은 노란 곰 앞에 있어요. (2번)' },
+  { stepNumber: 3, targetObjectId: 'americano', narrativeText: '제 아이스 아메리카노가 마이크 앞에 있어요. (3번)' },
+  { stepNumber: 4, targetObjectId: 'bambam', narrativeText: '제 뱀뱀 인형은 펜 용기 안에 있어요.(4번)' },
+  { stepNumber: 5, targetObjectId: 'bts', narrativeText: '방탄소년단은 제 한국어 노트 왼쪽에 있어요(5번)' },
+  { stepNumber: 6, targetObjectId: 'highlighters', narrativeText: '제 형광펜은 Butter 앨범 오른쪽에 있어요(6번)' },
+  { stepNumber: 7, targetObjectId: 'pens', narrativeText: '제 펜은 방탄소년단 앞에  있어요(7번)' },
+  { stepNumber: 8, targetObjectId: 'turtle', narrativeText: '제 라면 거북이가 PC 위에 있어요. (8번)' },
   { stepNumber: 9, targetObjectId: null, narrativeText: '책상 준비 완료! 오늘도 빛나는 하루 보내세요! ✨ (책상 투어 끝!)' },
 ];
 
@@ -100,7 +108,7 @@ function Unit3DeskTour() {
               <IoSparkles className="ml-2 text-yellow-400" />
             </h1>
             <p className="text-md md:text-lg text-bitna-muted-pink">
-              내 책상 위 물건들을 클릭하며 이야기를 따라가 보세요!
+              내 책상 위의 객체들을 클릭하세요!
             </p>
           </div>
 
@@ -111,9 +119,7 @@ function Unit3DeskTour() {
               책상 탐험 시간!
             </h2>
             <p className="text-sm md:text-base text-green-900 opacity-90">
-              제 책상에 오신 것을 환영해요! 😊 여기에는 제가 매일 사용하는 여러 물건들이 있어요.
-              아래 <span className="font-bold text-green-700">안내 메시지</span>를 따라 물건들을 하나씩 클릭해보세요.
-              각 물건을 클릭하면 한국어로 그 물건에 대한 재미있는 설명이 나올 거예요!
+              제 책상에 오신 것을 환영해요! 😊 저는 매일 여기에서 공부해요. 오늘 빛나의 일기에서 우리는 제 공부 곳을 봐요.
             </p>
           </div>
 
@@ -196,7 +202,7 @@ function Unit3DeskTour() {
             })}
           </div>
           <p className="mt-6 text-center text-sm text-bitna-muted-pink">
-            이야기를 따라 물건을 클릭하거나 자유롭게 탐색해보세요!
+            제 책상이 마음에 들었나요?
           </p>
         </div>
       </div>

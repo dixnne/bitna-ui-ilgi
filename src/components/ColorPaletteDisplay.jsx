@@ -30,7 +30,7 @@ function ColorPaletteDisplay() {
             <div 
               className={`w-12 h-12 md:w-14 md:h-14 rounded-full shadow-md border-2 border-white group-hover:scale-110 transition-transform duration-200 ${color.tailwindClass}`}
             ></div>
-            <p className="text-xs text-gray-700 mt-2 font-single-day group-hover:text-bitna-strong-pink transition-colors">{color.name}</p>
+            <p className="text-md text-gray-700 mt-2 font-single-day group-hover:text-bitna-strong-pink transition-colors">{color.name}</p>
           </div>
         ))}
       </div>
