@@ -2,6 +2,12 @@
 import React from 'react';
 import { FaPalette } from 'react-icons/fa';
 
+/**
+ * A component that displays the color palette of the application.
+ * It links to the source color palette on Color Hunt.
+ *
+ * @returns {JSX.Element} The rendered color palette display component.
+ */
 function ColorPaletteDisplay() {
   const colors = [
     { name: '연분홍색', hex: '#FFEDFA', tailwindClass: 'bg-bitna-light-pink' }, // Rosa Pastel

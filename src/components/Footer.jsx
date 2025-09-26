@@ -3,6 +3,11 @@ import React from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { IoSparkles } from 'react-icons/io5';
 
+/**
+ * A footer component that displays project information, credits, and copyright.
+ *
+ * @returns {JSX.Element} The rendered footer component.
+ */
 function Footer() {
 
   return (

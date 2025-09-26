@@ -14,6 +14,13 @@ import { RiSparkling2Fill } from "react-icons/ri";
 import CreativeEnergyBar from '../components/CreativeEnergyBar'; // Asegúrate que la ruta sea correcta
 import ColorPaletteDisplay from '../components/ColorPaletteDisplay'; // Asegúrate que la ruta sea correcta
 
+/**
+ * The cover page of the diary, serving as the main entry point.
+ * It features a central card with project details and a "Start" button,
+ * along with supplementary components like a creative energy bar and color palette.
+ *
+ * @returns {JSX.Element} The rendered cover page component.
+ */
 function Cover() {
   return (
     // Contenedor principal del componente Cover
