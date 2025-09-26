@@ -3,7 +3,17 @@ import React, { useState } from 'react';
 import { FaHeart, FaPenNib, FaUserFriends, FaTimes, FaEnvelope } from 'react-icons/fa';
 import { IoSparkles } from 'react-icons/io5';
 
-// Componente para las notas/cartas interactivas
+/**
+ * An interactive card component that can be expanded or collapsed.
+ *
+ * @param {object} props - The component props.
+ * @param {string} props.title - The title of the card.
+ * @param {React.ElementType} props.icon - The icon component to display.
+ * @param {string} props.bgColor - The background color class for the card.
+ * @param {string} props.textColor - The text color class for the card.
+ * @param {React.ReactNode} props.children - The content to display inside the card.
+ * @returns {JSX.Element} The rendered note card component.
+ */
 const NoteCard = ({ title, icon, bgColor, textColor, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,6 +45,12 @@ const NoteCard = ({ title, icon, bgColor, textColor, children }) => {
 };
 
 
+/**
+ * A page that presents the conclusions and reflections of the project.
+ * It includes a main summary and interactive note cards for acknowledgments.
+ *
+ * @returns {JSX.Element} The rendered conclusions page.
+ */
 function ConclusionsPage() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-bitna-light-pink via-pink-200 to-purple-200 py-8 px-4 pt-10">

@@ -8,9 +8,17 @@ import { IoSparkles } from 'react-icons/io5';
 // --- PASO 1: Importar los datos desde el archivo separado ---
 import travelFlashbacksData from './data/Unit6Data.js'; // Ajusta la ruta si es necesario
 
-// Theme Card Component
+/**
+ * A card component that displays a travel theme.
+ * Clicking on this card will navigate to a view showing all memories associated with this theme.
+ *
+ * @param {object} props - The component props.
+ * @param {object} props.theme - The theme data object to display.
+ * @param {Function} props.onThemeSelect - Function to call when the theme card is selected.
+ * @returns {JSX.Element} The rendered theme card component.
+ */
 const FlashbackThemeCard = ({ theme, onThemeSelect }) => (
-  <div 
+  <div
     className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-bitna-strong-pink group"
     onClick={() => onThemeSelect(theme)}
   >
@@ -30,7 +38,15 @@ const FlashbackThemeCard = ({ theme, onThemeSelect }) => (
   </div>
 );
 
-// Recuerdo Card Component
+/**
+ * A card component that displays a single travel memory (recuerdo).
+ * It shows an image and a title, with a decorative "album" style.
+ *
+ * @param {object} props - The component props.
+ * @param {object} props.recuerdo - The memory data object to display.
+ * @param {Function} props.onRecuerdoSelect - Function to call when the memory card is selected.
+ * @returns {JSX.Element} The rendered memory card component.
+ */
 const RecuerdoCard = ({ recuerdo, onRecuerdoSelect }) => {
   const rotationClass = recuerdo.albumStyle?.rotation || 'transform rotate-0';
   const decorationType = recuerdo.albumStyle?.decoration;
@@ -62,7 +78,20 @@ const RecuerdoCard = ({ recuerdo, onRecuerdoSelect }) => {
   );
 };
 
-// Recuerdo Detail Modal
+/**
+ * A modal component that displays the full details of a selected travel memory.
+ * It includes a large image, a detailed narrative, and navigation buttons
+ * to move between memories within the same theme.
+ *
+ * @param {object} props - The component props.
+ * @param {object} props.recuerdo - The memory data object to display.
+ * @param {Function} props.onClose - Function to call to close the modal.
+ * @param {Function} props.onNext - Function to navigate to the next memory.
+ * @param {Function} props.onPrev - Function to navigate to the previous memory.
+ * @param {number} props.currentIndex - The index of the current memory in its theme.
+ * @param {number} props.totalInTheme - The total number of memories in the current theme.
+ * @returns {JSX.Element|null} The rendered memory detail modal or null if no memory is selected.
+ */
 const RecuerdoDetailModal = ({ recuerdo, onClose, onNext, onPrev, currentIndex, totalInTheme }) => {
   if (!recuerdo) return null;
 
@@ -126,9 +155,17 @@ const RecuerdoDetailModal = ({ recuerdo, onClose, onNext, onPrev, currentIndex, 
 };
 
 
+/**
+ * The sixth unit page of the diary, focusing on travel flashbacks from South America.
+ * It's structured as a photo album where users first select a theme (a country or region)
+ * and are then shown a collection of memories from that theme. Users can click on
+ * individual memories to see a detailed view with a narrative.
+ *
+ * @returns {JSX.Element} The rendered travel flashbacks page.
+ */
 function Unit6TravelFlashbacks() {
-  const [selectedTheme, setSelectedTheme] = useState(null); 
-  const [selectedRecuerdo, setSelectedRecuerdo] = useState(null); 
+  const [selectedTheme, setSelectedTheme] = useState(null);
+  const [selectedRecuerdo, setSelectedRecuerdo] = useState(null);
   const [currentRecuerdoIndex, setCurrentRecuerdoIndex] = useState(0);
 
   const handleThemeSelect = (theme) => {

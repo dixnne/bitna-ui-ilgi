@@ -42,8 +42,18 @@ const leoConnections = [
   [8, 9]  // Chertan eq. (8) to Regulus (9) - Completa la base del cuerpo
 ];
 
+/**
+ * The main index page, displaying a constellation map of the diary units.
+ * Each star in the constellation represents a unit and links to its corresponding page.
+ *
+ * @returns {JSX.Element} The rendered index page component.
+ */
 function Index() {
-  // Helper function to find a unit's position by its ID
+  /**
+   * A helper function to find a unit's position by its ID.
+   * @param {number} id - The ID of the unit to find.
+   * @returns {object|null} The position object {y, x} or null if not found.
+   */
   const getUnitPosById = (id) => {
     const unit = diaryUnits.find(u => u.id === id);
     return unit ? unit.pos : null;

@@ -23,7 +23,15 @@ const participants = {
   esme: { name: "에스메", avatar: esmePfp, isCurrentUser: false},
 };
 
-// Image Lightbox Component - Reverted to previous, smaller size
+/**
+ * A lightbox component to display an enlarged version of an image.
+ * It overlays the screen and can be closed by clicking outside the image or on the close button.
+ *
+ * @param {object} props - The component props.
+ * @param {string} props.imageUrl - The URL of the image to display.
+ * @param {Function} props.onClose - The function to call when the lightbox should be closed.
+ * @returns {JSX.Element|null} The rendered lightbox component or null if no image URL is provided.
+ */
 const ImageLightbox = ({ imageUrl, onClose }) => {
   if (!imageUrl) return null;
 
@@ -50,7 +58,22 @@ const ImageLightbox = ({ imageUrl, onClose }) => {
   );
 };
 
-// Message Bubble Component
+/**
+ * A component that renders a single chat message bubble.
+ * It styles the bubble differently for the current user versus other chat participants.
+ * It can display text, an image, or an icon.
+ *
+ * @param {object} props - The component props.
+ * @param {string} props.sender - The name of the message sender.
+ * @param {string} props.text - The text content of the message.
+ * @param {string} props.time - The timestamp of the message.
+ * @param {boolean} props.isCurrentUser - True if the message is from the current user.
+ * @param {string} props.avatar - The URL for the sender's avatar image.
+ * @param {React.ElementType} [props.icon] - An optional icon component to display.
+ * @param {string} [props.imageUrl] - An optional URL for an image to display in the message.
+ * @param {Function} props.onImageClick - The function to call when the message's image is clicked.
+ * @returns {JSX.Element} The rendered message bubble component.
+ */
 const MessageBubble = ({ sender, text, time, isCurrentUser, avatar, icon, imageUrl, onImageClick }) => {
   const bubbleClasses = isCurrentUser
     ? "bg-bitna-lime-green text-gray-800 self-end rounded-l-xl rounded-tr-xl"
@@ -89,6 +112,13 @@ const MessageBubble = ({ sender, text, time, isCurrentUser, avatar, icon, imageU
   );
 };
 
+/**
+ * The second unit page of the diary, simulating a group chat application.
+ * This page introduces the user's Korean friends through a mock chat conversation.
+ * It includes a chat window with message bubbles and a sidebar with participant info.
+ *
+ * @returns {JSX.Element} The rendered group chat page.
+ */
 function Unit2GroupChat() {
   const [enlargedImageUrl, setEnlargedImageUrl] = useState(null);
 

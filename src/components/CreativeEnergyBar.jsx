@@ -2,6 +2,12 @@
 import React from 'react';
 import { RiSparklingFill } from 'react-icons/ri'; // Icono de brillo
 
+/**
+ * A component that displays a creative energy progress bar.
+ * It visually represents a simulated energy level.
+ *
+ * @returns {JSX.Element} The rendered creative energy bar component.
+ */
 function CreativeEnergyBar() {
   // Simula un porcentaje de llenado para la barra
   const energyLevel = 75; // Puedes hacerlo dinámico o aleatorio si quieres

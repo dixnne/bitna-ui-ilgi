@@ -106,6 +106,14 @@ const hwachaeIngredients = [
   },
 ];
 
+/**
+ * The fifth unit page of the diary, themed around preparing Hwachae, a Korean fruit punch.
+ * This page is an interactive experience where users click on ingredients from a list
+ * to "add" them to a bowl. Each click updates a dialogue box with information
+ * about the ingredient and its counter in Korean.
+ *
+ * @returns {JSX.Element} The rendered Hwachae preparation page.
+ */
 function Unit5HwachaePrep() {
   const [bitnaDialogue, setBitnaDialogue] = useState("오늘 친구들 하고 저는 화채를 만듭니다! 어떤 재료가 필요입니까? 🍉🍓🥛");
   const [checkedIngredients, setCheckedIngredients] = useState({});

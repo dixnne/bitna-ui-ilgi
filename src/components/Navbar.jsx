@@ -9,6 +9,12 @@ import { IoSparkles } from 'react-icons/io5'; // Nuevo icono para el logo "Bitna
 
 // El componente BitnaLogo SVG ya no es necesario, lo reemplazaremos con IoSparkles.
 
+/**
+ * A responsive navigation bar with a logo, navigation links, and social media icons.
+ * It includes a mobile-friendly menu that adapts to different screen sizes.
+ *
+ * @returns {JSX.Element} The rendered navigation bar component.
+ */
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

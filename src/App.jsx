@@ -14,6 +14,12 @@ import Unit7FourSeasonsDiary from './pages/units/Unit7FourSeasonsDiary';
 import Unit8TimePlanner from './pages/units/Unit8TimePlanner';
 import ConclusionsPage from './pages/ConclusionsPage';
 
+/**
+ * The main application component.
+ * It sets up the router and defines all the routes for the different pages of the diary.
+ *
+ * @returns {JSX.Element} The rendered application with a navbar, routed content, and a footer.
+ */
 function App() {
 
   return (

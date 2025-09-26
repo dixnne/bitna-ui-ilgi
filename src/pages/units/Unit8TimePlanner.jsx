@@ -74,7 +74,17 @@ const daysOfWeekKorean = {
   sunday: "일요일",
 };
 
-// Event Modal Component
+/**
+ * A modal component that displays the details of a selected calendar event.
+ * It shows the event's title, time, details, and an optional image.
+ *
+ * @param {object} props - The component props.
+ * @param {object} props.event - The event data object to display.
+ * @param {Function} props.onClose - Function to call to close the modal.
+ * @param {string} [props.dayName] - The name of the day (e.g., "Monday") for weekly events.
+ * @param {string} [props.dateString] - The formatted date string for monthly events.
+ * @returns {JSX.Element|null} The rendered event modal or null if no event is selected.
+ */
 const EventModal = ({ event, onClose, dayName, dateString }) => {
   if (!event) return null;
   const displayTitle = event.activity || event.eventName;
@@ -118,8 +128,15 @@ const EventModal = ({ event, onClose, dayName, dateString }) => {
 };
 
 
+/**
+ * The eighth unit page of the diary, designed as an interactive time planner.
+ * It allows users to toggle between a weekly schedule view and a monthly calendar view.
+ * Users can click on events to see more details in a modal window.
+ *
+ * @returns {JSX.Element} The rendered time planner page.
+ */
 function Unit8TimePlanner() {
-  const [currentView, setCurrentView] = useState('weekly'); 
+  const [currentView, setCurrentView] = useState('weekly');
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedDayName, setSelectedDayName] = useState('');
   const [selectedDateString, setSelectedDateString] = useState('');

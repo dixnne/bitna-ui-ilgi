@@ -13,11 +13,22 @@ import laptop from '../../assets/unit3/laptop.jpg';
 import pens from '../../assets/unit3/pens.jpg';
 import turtle from '../../assets/unit3/turtle.jpg';
 
-// Component for the numbered, semi-transparent markers
+/**
+ * A component that displays a numbered marker on the desk image.
+ * These markers can be clicked to reveal more information about an object.
+ *
+ * @param {object} props - The component props.
+ * @param {number} props.number - The number to display inside the marker.
+ * @param {boolean} props.isTarget - True if this marker is the current narrative target, applying a pulse animation.
+ * @param {Function} props.onClick - The function to call when the marker is clicked.
+ * @param {string} props.position - The Tailwind CSS classes for positioning the marker.
+ * @param {number} props.zIndex - The z-index for stacking the marker.
+ * @returns {JSX.Element} The rendered numbered marker component.
+ */
 const NumberedMarker = ({ number, isTarget, onClick, position, zIndex }) => {
   return (
     <div
-      className={`absolute w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center 
+      className={`absolute w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center
                   bg-bitna-strong-pink bg-opacity-60 text-white text-lg md:text-xl font-bold 
                   cursor-pointer transform transition-all duration-200 hover:bg-opacity-80 hover:scale-110
                   ${isTarget ? 'animate-pulse ring-4 ring-bitna-lime-green ring-opacity-75' : ''}
@@ -55,6 +66,14 @@ const narrativeStepsData = [
 ];
 
 
+/**
+ * The third unit page of the diary, presenting an interactive "desk tour."
+ * Users can click on numbered markers placed on a desk image to learn about
+ * different objects. The tour follows a narrative, guiding the user through
+ * the objects in a specific order.
+ *
+ * @returns {JSX.Element} The rendered desk tour page.
+ */
 function Unit3DeskTour() {
   const [activeBubbleObjectId, setActiveBubbleObjectId] = useState(null);
   const [currentNarrativeStepIndex, setCurrentNarrativeStepIndex] = useState(0);

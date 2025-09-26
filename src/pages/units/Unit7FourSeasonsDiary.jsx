@@ -87,11 +87,21 @@ const seasonsData = [
   },
 ];
 
-// Season Card Component - Con animaciones de fondo restauradas
+/**
+ * A card component representing one of the four seasons.
+ * It's interactive, displaying unique icons and color schemes for each season.
+ * Clicking the card selects a season to display its diary entry.
+ *
+ * @param {object} props - The component props.
+ * @param {object} props.season - The data object for the season to display.
+ * @param {Function} props.onSeasonSelect - Function to call when the card is selected.
+ * @param {boolean} props.isActive - True if this season is currently selected.
+ * @returns {JSX.Element} The rendered season card component.
+ */
 const SeasonCard = ({ season, onSeasonSelect, isActive }) => (
   <div
-    className={`relative p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center cursor-pointer 
-                transform hover:-translate-y-2 transition-all duration-300 ease-in-out 
+    className={`relative p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center cursor-pointer
+                transform hover:-translate-y-2 transition-all duration-300 ease-in-out
                 aspect-square group overflow-hidden bg-gradient-to-br ${season.colors.bgGradient}
                 border-4 ${isActive ? season.colors.activeRing : 'border-transparent'} ${season.colors.hoverRing}`}
     onClick={() => onSeasonSelect(season)}
@@ -131,7 +141,14 @@ const SeasonCard = ({ season, onSeasonSelect, isActive }) => (
   </div>
 );
 
-// Diary Entry Display Component
+/**
+ * A component that displays the diary entry for a selected season.
+ * It shows the season's name and the corresponding journal text.
+ *
+ * @param {object} props - The component props.
+ * @param {object} props.season - The data object for the selected season.
+ * @returns {JSX.Element|null} The rendered diary entry component or null if no season is selected.
+ */
 const DiaryEntryDisplay = ({ season }) => {
     if (!season) return null;
 
@@ -153,6 +170,13 @@ const DiaryEntryDisplay = ({ season }) => {
 }
 
 
+/**
+ * The seventh unit page of the diary, which revolves around the four seasons.
+ * Users can select a season from a set of interactive, themed cards,
+ * which then reveals a corresponding diary entry about that season.
+ *
+ * @returns {JSX.Element} The rendered four seasons diary page.
+ */
 function Unit7FourSeasonsDiary() {
   const [activeSeason, setActiveSeason] = useState(null);
   const [animationKey, setAnimationKey] = useState(0);

@@ -86,7 +86,24 @@ const initialProductsData = [
   },
 ];
 
-// Product Card Component - Horizontal Layout & Cuter Style
+/**
+ * A card component that displays product information in a horizontal layout.
+ * It includes an image, name, price, and action buttons for adding to cart,
+ * managing quantity, and toggling favorite status.
+ *
+ * @param {object} props - The component props.
+ * @param {object} props.product - The product data to display.
+ * @param {Function} props.onProductClick - Function to call when the product is clicked to see details.
+ * @param {Function} props.onAddToCart - Function to add the product to the cart.
+ * @param {Function} props.onToggleFavorite - Function to toggle the product's favorite status.
+ * @param {boolean} props.isFavorite - True if the product is in the favorites list.
+ * @param {number} props.cartQuantity - The quantity of this product in the cart.
+ * @param {Function} props.onQuantityChange - Function to change the quantity of the product in the cart.
+ * @param {Function} props.onRemoveFromCart - Function to remove the product from the cart.
+ * @param {boolean} props.isSelected - True if the product is selected (checked).
+ * @param {Function} props.onSelect - Function to handle the selection (checking) of the product.
+ * @returns {JSX.Element} The rendered product card component.
+ */
 const ProductCard = ({ product, onProductClick, onAddToCart, onToggleFavorite, isFavorite, cartQuantity, onQuantityChange, onRemoveFromCart, isSelected, onSelect }) => {
   const isInCart = cartQuantity > 0;
 
@@ -158,7 +175,16 @@ const ProductCard = ({ product, onProductClick, onAddToCart, onToggleFavorite, i
   );
 };
 
-// Product Detail Modal Component (sin cambios)
+/**
+ * A modal component that displays detailed information about a selected product.
+ * It includes a larger image, description, and the user's personal narrative about the product.
+ *
+ * @param {object} props - The component props.
+ * @param {object} props.product - The product data to display in the modal.
+ * @param {Function} props.onClose - Function to call to close the modal.
+ * @param {Function} props.onAddToCart - Function to add the product to the cart from the modal.
+ * @returns {JSX.Element|null} The rendered product detail modal or null if no product is selected.
+ */
 const ProductDetailModal = ({ product, onClose, onAddToCart }) => {
   if (!product) return null;
   return (
@@ -190,7 +216,17 @@ const ProductDetailModal = ({ product, onClose, onAddToCart }) => {
   );
 };
 
-// Cart Summary Component
+/**
+ * A component that displays a summary of the shopping cart.
+ * It calculates and shows the subtotal, shipping cost, and total amount
+ * for the selected items and includes a checkout button.
+ *
+ * @param {object} props - The component props.
+ * @param {Array<object>} props.cartItems - An array of items currently in the cart.
+ * @param {Array<object>} props.products - The list of all available products.
+ * @param {number} props.selectedItemCount - The number of unique items selected for checkout.
+ * @returns {JSX.Element} The rendered cart summary component.
+ */
 const CartSummary = ({ cartItems, products, selectedItemCount }) => {
   const subtotal = cartItems.reduce((sum, item) => {
     const product = products.find(p => p.id === item.id);
@@ -233,6 +269,13 @@ const CartSummary = ({ cartItems, products, selectedItemCount }) => {
 };
 
 
+/**
+ * The fourth unit page of the diary, themed around preparing for a movie night.
+ * It functions as a mini e-commerce interface where users can browse snacks,
+ * add them to a shopping cart, mark favorites, and see a summary of their order.
+ *
+ * @returns {JSX.Element} The rendered movie night preparation page.
+ */
 function Unit4MovieNightPrep() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cartItems, setCartItems] = useState([

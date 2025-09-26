@@ -36,10 +36,24 @@ const riJeongHyeokAvatar = "https://placehold.co/40x40/006400/FFFFFF?text=RJH";
 const kangCheolAvatar = "https://placehold.co/40x40/1E90FF/FFFFFF?text=KC";
 const kangTaeMooAvatar = "https://placehold.co/40x40/4682B4/FFFFFF?text=KTM";
 
-// Helper component for profile "posts" or sections
-const ProfilePost = ({ 
-  icon, 
-  title, 
+/**
+ * A reusable component for creating social media-style "posts" or content sections.
+ * It includes a title, icon, content area, and interactive elements like a like button and a comment section.
+ *
+ * @param {object} props - The component props.
+ * @param {React.ElementType} props.icon - The icon component to display next to the title.
+ * @param {string} props.title - The title of the post.
+ * @param {React.ReactNode} props.children - The main content of the post.
+ * @param {string} [props.bgColor='bg-bitna-light-pink'] - The background color class for the post container.
+ * @param {string} [props.textColor='text-bitna-strong-pink'] - The text color class for the post title and actions.
+ * @param {string} [props.contentBg='bg-white'] - The background color class for the content area.
+ * @param {number} [props.initialLikes=0] - The initial number of likes for the post.
+ * @param {Array<object>} [props.comments=[]] - An array of comment objects to display.
+ * @returns {JSX.Element} The rendered profile post component.
+ */
+const ProfilePost = ({
+  icon,
+  title,
   children, 
   bgColor = 'bg-bitna-light-pink', 
   textColor = 'text-bitna-strong-pink', 
@@ -112,6 +126,13 @@ const ProfilePost = ({
   );
 };
 
+/**
+ * The first unit page of the diary, focusing on self-introduction.
+ * It's styled as a social media profile page, with various posts detailing
+ * personal information, hobbies, and interests.
+ *
+ * @returns {JSX.Element} The rendered self-introduction page.
+ */
 function Unit1SelfIntro() {
   const userName = "반짝반짝 빛나를 소개해요!"; // "Introducing Bitna, the Shining Star!"
   const koreanName = "빛나"; // "Shining Star"
